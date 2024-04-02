@@ -18,6 +18,6 @@ class Programa
         int valorDia = int.Parse(Console.ReadLine());
 
         DiaDeLaSemana dia = (DiaDeLaSemana)valorDia;
-        Console.WriteLine("El día de la semana es: " + dia);
+        Console.WriteLine("El día de la semana que elgiste es: " + dia);
     }
 }
