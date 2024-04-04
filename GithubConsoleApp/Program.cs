@@ -1,23 +1,37 @@
 ﻿using System;
 
-enum DiaDeLaSemana
+namespace GithubConsoleApp
 {
-    Domingo = 0,
-    Lunes = 1,
-    Martes = 2,
-    Miercoles = 3,
-    Jueves = 4,
-    Viernes = 5,
-    Sabado = 6
-}
-
-class Programa
-{
-    static void Main()
+    class Programa
     {
-        int valorDia = int.Parse(Console.ReadLine());
+        static void Main2()
+        {
+            Console.WriteLine("Por favor seleccione la dirección del convertidor");
+            Console.WriteLine("1. De Celsius a Fahrenheit.");
+            Console.WriteLine("2. De Fahrenheit a Celsius.");
+            Console.Write(": ");
 
-        DiaDeLaSemana dia = (DiaDeLaSemana)valorDia;
-        Console.WriteLine("El día de la semana que elgiste es: " + dia);
+            string? seleccion = Console.ReadLine();
+            double F, C;
+
+            switch (seleccion)
+            {
+                case "1":
+                    Console.Write("Por favor ingrese la temperatura en Celsius: ");
+                    F = TemperatureConverter.CelsiusAFahrenheit(Console.ReadLine());
+                    Console.WriteLine("Temperatura en Fahrenheit: {0:F2}", F);
+                    break;
+
+                case "2":
+                    Console.Write("Por favor ingrese la temperatura en Fahrenheit: ");
+                    C = TemperatureConverter.FahrenheitACelsius(Console.ReadLine());
+                    Console.WriteLine("Temperatura en Celsius: {0:F2}", C);
+                    break;
+
+                default:
+                    Console.WriteLine("Por favor seleccione un convertidor.");
+                    break;
+            }
+        }
     }
 }
